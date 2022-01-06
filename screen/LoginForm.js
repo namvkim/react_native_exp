@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, TextInput, Image, Text, View } from 'react-native';
 import LinkedSite from '../assets/linkedsite.png';
 
-const YourApp = () => {
+export const YourApp = ({ navigation }) => {
+    const [data, setData] = useState({ email: '', password: '' });
+
     const onPress = () => {
         alert('press !!!');
     }
@@ -20,11 +22,11 @@ const YourApp = () => {
             </View>
             <Text style={styles.txt1}>All Other Users > Use the login form below</Text>
             <Text style={styles.txt2}>Email</Text>
-            <TextInput style={styles.input} placeholder='name@host.com'></TextInput>
+            <TextInput style={styles.input} placeholder='name@host.com' value={data.email} onChangeText={(value) => { setData({ ...data, email: value }) }}></TextInput>
             <Text style={styles.txt2}>Password</Text>
-            <TextInput style={styles.input} placeholder='Password'></TextInput>
+            <TextInput style={styles.input} placeholder='Password' value={data.password} onChangeText={(value) => { setData({ ...data, password: value }) }}></TextInput>
             <Text style={styles.txt3}>Forgot your password?</Text>
-            <TouchableOpacity style={[styles.button, { backgroundColor: '#0c2461' }]} onPress={onPress}>
+            <TouchableOpacity style={[styles.button, { backgroundColor: '#0c2461' }]} onPress={() => navigation.navigate('DrawerScreen', data)}>
                 <Text style={styles.btnText}>Login</Text>
             </TouchableOpacity>
             <Text style={styles.txt4}>Forgot your password or having trouble signing in ?</Text>
@@ -79,7 +81,7 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingVertical: 5,
         paddingLeft: 20,
-        color: '#a4b0be'
+        color: 'black'
     },
     txt1: {
         width: '100%'

@@ -2,7 +2,9 @@ import Caculator from './screen/Caculator';
 import LoginForm from './screen/LoginForm';
 import FlatList from './screen/FlatList';
 import ScrollView from './screen/ScrollView';
-import Navigation from './screen/Navigation';
+import Navigation from './screen/Navigation/Navigation';
+import MyRecord from './screen/MyRecord/MainScreen';
+import FireBase from './screen/FireBase/MainScreen';
 
 const YourApp = () => {
   return (
@@ -10,7 +12,9 @@ const YourApp = () => {
     // <LoginForm></LoginForm>
     // <FlatList></FlatList>
     // <ScrollView></ScrollView>
-    <Navigation></Navigation>
+    // <Navigation></Navigation>
+    // <MyRecord></MyRecord>
+    <FireBase></FireBase>
   );
 }
 

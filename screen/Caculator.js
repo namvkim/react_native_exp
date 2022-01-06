@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, ImageBackground, Text, View } from 'react-native';
 
 const YourApp = () => {
-    const image = { uri: "https://wallpaperaccess.com/full/488567.jpg" };
-
     const [history, setHistory] = useState('');
     const [result, setResult] = useState('');
     const arr = ['C', '±', '/', 'x', '7', '8', '9', '─', '4', '5', '6', '+', '1', '2', '3'];
@@ -37,7 +35,7 @@ const YourApp = () => {
     }
 
     return (
-        <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
+        <ImageBackground source={require('../assets/background_caculator.jpg')} resizeMode="cover" style={styles.imageBackground}>
             <View style={styles.container}>
                 <View style={styles.screen}>
                     <Text style={styles.history}>{history}</Text>
@@ -115,9 +113,9 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: "#f1f2f6",
-        width: 60,
-        height: 60,
-        borderRadius: 30,
+        width: 70,
+        height: 70,
+        borderRadius: 35,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -134,8 +132,8 @@ const styles = StyleSheet.create({
     },
     buttonEQ: {
         height: 120,
-        width: 60,
-        borderRadius: 30,
+        width: 70,
+        borderRadius: 35,
         justifyContent: 'flex-end',
         alignItems: 'center',
         backgroundColor: '#fab1a0',

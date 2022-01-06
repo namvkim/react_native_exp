@@ -30,14 +30,12 @@ export default function Fl_List() {
     )
 
     const renderItem = ({ item }) => (
-        <View style={{
-            // backgroundColor: item.selected ? 'red' : 'blue',
-        }}>
+        <View>
             <View style={styles.itemIcon}>
                 <Image source={item.icon}></Image>
             </View>
             <Image source={item.img} style={styles.itemImg} />
-            <Text onPress={() => { item.selected = !item.selected, console.log(item.selected) }} style={styles.itemTitle}>{item.title}</Text>
+            <Text style={styles.itemTitle}>{item.title}</Text>
             <Text style={styles.itemContent}>{item.content}</Text>
             <View style={styles.itemRow}>
                 <Text style={styles.itemDate}>{item.date}</Text>
